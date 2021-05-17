@@ -163,8 +163,8 @@ class STLED316S_Common
 		void setBrightnessLED(LEDnum_t LEDnum, uint8_t brightness);
 		void setLED(LEDnum_t LEDnum, bool state);
 
-		virtual void writeData(uint8_t *data, uint8_t lenght);
-		virtual uint8_t readData(uint8_t address);
+		virtual void writeData(uint8_t *data, uint8_t lenght) = 0;
+		virtual uint8_t readData(uint8_t address) = 0;
 };
 
 class STLED316S_SPI : public STLED316S_Common
