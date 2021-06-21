@@ -1,5 +1,12 @@
 # STLED316S
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![version](https://img.shields.io/badge/version-1.0.2-blue)
+
+:star: Star us on GitHub — it helps!
+
 Arduino Library for STLED316S LED controller with keyscan
+
 
 [Link to STLED316S product page](https://www.st.com/en/power-management/stled316s.html)
 
@@ -16,6 +23,8 @@ Arduino Library for STLED316S LED controller with keyscan
 ## Version
 
 - Version 1.0.0 -- Intial version
+- Version 1.0.1 -- Addition of a private variable to save the state of the LEDs.
+- Version 1.0.2 -- Fix vtable linker error 
 
 ## Arduino Compatibility
 

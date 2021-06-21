@@ -1,9 +1,9 @@
 /******************************************************************************
- * \file STLED316S.h
- * \brief Arduino Library for STLED316S LED controller with keyscan (Header)
- * \author David Leval
- * \version 1.0.0
- * \date 08/04/2020
+ * @file STLED316S.h
+ * @brief Arduino Library for STLED316S LED controller with keyscan (Header)
+ * @author David Leval
+ * @version 1.0.2
+ * @date 17/06/2021
  * 
  * Resources:
  * Uses SPI.h for SPI operation
@@ -19,6 +19,9 @@
  * 
  * Release :
  * 		- v1.0.0 (08/04/2020) : Initial version
+ * 		- v1.0.1 (02/06/2021) : Addition of a private variable to save the state of the LEDs 
+ * 								(Contribution of Giovani Luis Franco)
+ * 		- v1.0.2 (17/06/2021) : Fix vtable linker error (default implementation of virtual functions )
  * 
  * STLED316S library is free software: you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public License as
@@ -144,11 +147,11 @@ class STLED316S_Common
 		uint8_t _digit_brightness[3];
 		uint8_t _LED_brightness[4];
 		uint8_t _digDP;
-
-	protected:
+		uint8_t _LED_state;  //!< Memory of LEDs state
 		uint8_t _nbrOfDigit;
 
 	public:
+		STLED316S_Common(uint8_t nbrOfDigit);
 		void begin(void);
 		void begin(uint8_t digA, uint8_t digB, uint8_t digC, uint8_t digD, uint8_t digE, uint8_t digF, uint8_t digG, uint8_t digDP);
 		void displayON(void);
